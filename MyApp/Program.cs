@@ -1,4 +1,4 @@
-﻿namespace MyApp;
+namespace MyApp;
 
 public class Program{
     public static void Main(String[] args){
