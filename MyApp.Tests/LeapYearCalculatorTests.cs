@@ -20,7 +20,7 @@ public class leapYearCalculatorTests
     public void isNotLeapYearDivisibleByHundred(){
         var calculator = new LeapYearCalculator();
 
-        bool isLeapYearFalse = calculator.IsLeapYear(1300);
+        bool isLeapYearFalse = calculator.IsLeapYear(1700);
 
         isLeapYearFalse.Should().Be(false);
     }
@@ -32,5 +32,12 @@ public class leapYearCalculatorTests
         bool isLeapYearCorrect = calculator.IsLeapYear(1600);
 
         isLeapYearCorrect.Should().Be(true);
+    }
+
+    [Fact]
+    public void triggerYearTooEarlyException(){
+        var calculator = new LeapYearCalculator();
+
+        Assert.Throws<YearTooEarlyException>(() => calculator.IsLeapYear(1300));
     }
 }
