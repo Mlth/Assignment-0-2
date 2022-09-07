@@ -40,7 +40,7 @@ public class leapYearCalculatorTests
 
         Assert.Throws<YearTooEarlyException>(() => calculator.IsLeapYear(1300));
     }
-
+    
     [Fact]
     public void handleStringInsteadOfYear(){
         var calculator = new LeapYearCalculator();
