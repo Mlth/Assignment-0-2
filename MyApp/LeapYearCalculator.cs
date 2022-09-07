@@ -13,4 +13,16 @@ public class LeapYearCalculator {
         Console.Write("nay");
         return false;
     }
+
+    public void takeUserInput(){
+        Console.Write("Write a year: ");
+        try{
+            int userYear = Convert.ToInt32(Console.ReadLine());
+            IsLeapYear(userYear);
+        } catch(YearTooEarlyException e) {
+            Console.Write(e.GetMessage());
+        } catch(Exception) {
+            Console.Write("You have to write a number!");
+        }
+    }
 }
